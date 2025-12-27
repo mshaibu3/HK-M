@@ -40,6 +40,38 @@ graph TD
 
 ---
 
+## 🚀 Getting Started (Local Development)
+
+To run the HakilixM Intelligence Dashboard in a local environment, follow these steps:
+
+### 1. Prerequisites
+- **Node.js** (v18 or higher recommended)
+- **NPM** or **Yarn**
+- A valid **Gemini API Key** (for Neural Auditor features)
+
+### 2. Installation
+Clone the repository and install the required dependencies:
+```bash
+git clone https://github.com/hakilix/hakilixm-dashboard.git
+cd hakilixm-dashboard
+npm install
+```
+
+### 3. Environment Configuration
+Create a `.env` file in the project root and add your API key. The application uses this key exclusively for the `analyzeRiskPattern` service.
+```env
+API_KEY=your_gemini_api_key_here
+```
+
+### 4. Launch
+Run the development server:
+```bash
+npm start
+```
+The dashboard will be available at `http://localhost:3000`.
+
+---
+
 ## 🧠 Neural Intelligence Pipeline
 
 The **Anomaly Engine** processes synchronized physiological streams through a stacked contribution model.
