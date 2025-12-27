@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Layout from './components/Layout';
 import { View, Requirement, SensorWave, NeuralEvent, AnomalyMetric } from './types';
@@ -1038,7 +1037,6 @@ const AnomalyCore = () => {
         const strokeVolumeFactor = s.pathology === 'SVT' ? 0.45 : (s.pathology === 'Bradycardia' ? 1.35 : 1.0);
 
         // Feature Contribution Integration
-        // Calculate granular deviations for visualization and score integration
         const ecgContribution = (isPVC ? 0.8 : (s.pathology === 'SVT' ? 0.6 : (s.pathology === 'Bradycardia' ? 0.4 : 0.05))) + (Math.random() * 0.05);
         const ppgContribution = (strokeVolumeFactor < 0.8 ? 0.5 : (strokeVolumeFactor > 1.2 ? 0.3 : 0.1)) + (Math.random() * 0.05);
         const scgContribution = (s.state === 'Crying' ? 0.4 : (s.pathology !== 'None' ? 0.5 : 0.1)) + (activeMotionNoise > 0.5 ? 0.2 : 0);

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View } from '../types';
 import { 
@@ -10,7 +9,8 @@ import {
   BrainCircuit,
   Activity,
   ChevronRight,
-  Brain
+  Brain,
+  Info
 } from 'lucide-react';
 
 interface LayoutProps {
@@ -44,7 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ currentView, setView, children }) => {
           </div>
         </div>
 
-        <nav className="flex-1 px-3 py-6 space-y-1.5">
+        <nav className="flex-1 px-3 py-6 space-y-1.5 overflow-y-auto custom-scrollbar">
           {navItems.map((item) => {
             const isActive = currentView === item.id;
             return (
@@ -57,12 +57,10 @@ const Layout: React.FC<LayoutProps> = ({ currentView, setView, children }) => {
                   : 'text-slate-400 bg-transparent border-transparent hover:bg-slate-900/40 hover:text-slate-100 hover:border-slate-800/80 hover:shadow-md'
                 }`}
               >
-                {/* Active Indicator Bar - Pulse animation added */}
                 {isActive && (
                   <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,1)] rounded-full my-2 ml-0.5 animate-pulse" />
                 )}
                 
-                {/* Icon Container */}
                 <div className={`relative flex items-center justify-center transition-all duration-300 ${
                   isActive ? 'scale-110' : 'group-hover:scale-110 translate-x-0 group-hover:translate-x-0.5'
                 }`}>
@@ -90,7 +88,7 @@ const Layout: React.FC<LayoutProps> = ({ currentView, setView, children }) => {
           })}
         </nav>
 
-        <div className="p-4 mt-auto">
+        <div className="p-4 space-y-4">
           <div className="p-4 rounded-xl glass-blue border border-blue-500/10 bg-blue-500/[0.02]">
             <p className="text-xs text-blue-300 font-bold mb-1.5 flex items-center justify-between">
               Status <span className="text-[10px] bg-blue-500/20 px-1.5 rounded">V0.1.2</span>
@@ -103,12 +101,24 @@ const Layout: React.FC<LayoutProps> = ({ currentView, setView, children }) => {
             </div>
             <p className="text-[10px] text-slate-500 mt-2 font-medium tracking-tight">AI Core: Active</p>
           </div>
+
+          <div className="pt-2 border-t border-slate-800/60">
+            <div className="flex flex-col gap-1 text-[8px] text-slate-500 font-medium">
+              <p className="flex items-center gap-1.5">
+                <Info className="w-2.5 h-2.5 text-blue-500/60" />
+                PI: Musah Shaibu (MS3)
+              </p>
+              <p className="text-slate-600 truncate">research@hakilix.co.uk</p>
+              <p className="mt-1 leading-tight">
+                Copyright © 2025 Hakilix Labs UK Ltd. Proprietary and Confidential.
+              </p>
+            </div>
+          </div>
         </div>
       </aside>
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col overflow-hidden relative">
-        {/* Animated Background Blobs */}
         <div className="absolute top-[-10%] right-[-5%] w-[30rem] h-[30rem] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[30rem] h-[30rem] bg-purple-600/5 rounded-full blur-[140px] pointer-events-none"></div>
 
