@@ -1,0 +1,8 @@
+{
+  "name": "HakilixM - Pediatric Myocarditis Monitoring Dashboard",
+  "description": "A high-fidelity dashboard for the HakilixM pediatric wearable system, featuring PRD management, system architecture visualization, and ISO 13485 compliance tracking.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
